@@ -1,4 +1,4 @@
+*.pyc
 /nbproject/
 /db.sqlite3
-*.pyc
 
