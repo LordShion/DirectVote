@@ -1,9 +1,10 @@
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
+from django.shortcuts import render
 
-__author__ = "filipesilva"
-__date__ = "$Apr 10, 2015 2:30:53 PM$"
-
-if __name__ == "__main__":
-    print "Hello World"
+def home(request):
+    print "home"
+    return render(request,'home.html',{'data':''})
+    
+def login(request):
+    print "login"
+    return render(request,'login.html',{'data':''})
+    

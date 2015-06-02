@@ -1,9 +1,9 @@
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
+#-*- coding:utf-8 -*-
+from django.conf.urls import *
 
-__author__ = "filipesilva"
-__date__ = "$Apr 10, 2015 2:31:01 PM$"
+urlpatterns = patterns('',
 
-if __name__ == "__main__":
-    print "Hello World"
+    url(r'^login', 'DirectVote.main.views.login', name='main.login'),
+    url(r'', 'DirectVote.main.views.home', name='main.home'),
+
+)
