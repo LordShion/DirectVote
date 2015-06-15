@@ -1,8 +1,16 @@
 {% extends "base.html" %}
+
+{% load account %}
+
+{% user_display user as user_display %}
+
+
+
 {% load i18n %}
 {% block title %}{% trans "Direct Vote - home" %}{% endblock %}
 
 {% block content %}
     {% trans "home TODO write content" %}
+    {{ user_display }} {% trans  "has logged in..." %}
 {% endblock %}
 

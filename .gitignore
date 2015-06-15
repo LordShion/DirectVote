@@ -2,3 +2,5 @@
 /nbproject/
 /db.sqlite3
 
+/DirectVote/node_modules/
+/DirectVote/bower_components/
