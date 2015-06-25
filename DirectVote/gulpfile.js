@@ -5,10 +5,16 @@
  */
 
 
-var gulp = require('gulp');   
-    sass = require('gulp-ruby-sass') ;
-    notify = require("gulp-notify") ;
-    bower = require('gulp-bower');
+var gulp = require('gulp'),   
+    sass = require('gulp-ruby-sass') ,
+    notify = require("gulp-notify") ,
+    bower = require('gulp-bower'),
+    sourcemaps = require('gulp-sourcemaps'),
+    jshint     = require('gulp-jshint'),
+    concat = require('gulp-concat'),
+    gutil = require('gulp-util'),
+    uglify = require('gulp-uglify');
+    
     
     var config = {
      sassPath: './main/front-end/sass',
@@ -22,34 +28,32 @@ gulp.task('bower', function() { 
 
 gulp.task('icons', function() { 
     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
-        .pipe(gulp.dest('./main/static/fonts')); 
+        .pipe(gulp.dest('./main/static/main/fonts')); 
+});
+
+gulp.task('build-js', function() {
+  return gulp.src('./main/front-end/js/**/*.js')
+    .pipe(sourcemaps.init())
+      .pipe(concat('bundle.js'))
+      //only uglify if gulp is ran with '--type production'
+      .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./main/static/main/js'));
 });
 
 
-/*gulp.task('css', function() {
-    return sass(config.sassPath, { style: 'compressed' })
-    .on("error", notify.onError(function (error) {
-                 return "Error: " + error.message;
-             }))
-        .pipe(gulp.dest('./main/static/css'));
-});*/
-
-
-gulp.task('css', function() { 
-    return gulp.src(config.sassPath + '/main.scss')
-         .pipe(sass({
-             style: 'compressed',
+gulp.task('css', function() {
+    return sass(
+                 './main/front-end/sass',  {style: 'compressed' ,
              loadPath: [
                  './main/front-end/sass',
                  config.bowerDir + '/bootstrap-sass-official/assets/stylesheets',
-                 config.bowerDir + '/fontawesome/scss'
+                 config.bowerDir + '/fontawesome/scss',
              ]
-         }) 
-            .on("error", notify.onError(function (error) {
-                 return "Error: " + error.message;
-             }))) 
-         .pipe(gulp.dest('./main/static/css')); 
+         })
+        .pipe(gulp.dest('./main/static/main/css'));
 });
+
 
 // Rerun the task when a file changes
  gulp.task('watch', function() {
