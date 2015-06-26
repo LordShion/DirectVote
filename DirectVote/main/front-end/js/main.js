@@ -4,21 +4,20 @@
  * and open the template in the editor.
  */
 
-//var jquery = require('jquery');
-//var $ = jquery.jQuery;
+var users = require('./users.js');
 
-$(document).ready(function(){
-  console.log('ready');  
+$(document).ready(function () {
     
-    $(document).mouseover(function(){
-        $('body').attr('style','background-color:black');
+    $('#mn-fm-login input[type=submit]').on('click', function () {
+        //console.log(event);
+        users.login();
     });
-    $(document).mouseleave(function(){
-        $('body').attr('style','background-color:none');
-    });
-    
-    
+
+
+
 });
+
+
 
 
 

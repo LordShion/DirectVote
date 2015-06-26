@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% trans "Direct Vote - login" %}{% endblock %}
+
+
+
+{% block title %}
+    {% trans "DirectVote - Login" %}
+{% endblock %}
 
 {% block scripts %}
     <script type="text/javascript">
@@ -10,11 +15,11 @@
 
 
 {% block content %}
-    {% trans "login TODO write content" %}
+    {% trans "login" %}
     <form id="mn-fm-login" action="javascript:void(0)"> <!--action="/signin/" method="POST"-->
         <input id="mn-in-login-user" placeholder="{% trans 'user' %}"/>
-        <input id="mn-in-login-pass" placeholder="{% trans 'password' %}"/>
-        <input type="submit" value="{% trans 'Sign in' %}" onclick="console.log('test')"/>
+        <input id="mn-in-login-pass" type="password" placeholder="{% trans 'password' %}"/>
+        <input type="submit" value="{% trans 'Sign in' %}"/>
     </form>
 {% endblock %}
 

@@ -40,9 +40,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     
-        'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    #'allauth',
+    #'allauth.account',
+    #'allauth.socialaccount',
     # ... include the providers you want to enable:
     #'allauth.socialaccount.providers.amazon',
     #'allauth.socialaccount.providers.angellist',
@@ -52,7 +52,7 @@ INSTALLED_APPS = (
     #'allauth.socialaccount.providers.dropbox',
     #'allauth.socialaccount.providers.dropbox_oauth2',
     #'allauth.socialaccount.providers.evernote',
-    'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.flickr',
     #'allauth.socialaccount.providers.feedly',
     #'allauth.socialaccount.providers.fxa',
@@ -70,11 +70,12 @@ INSTALLED_APPS = (
     #'allauth.socialaccount.providers.stackexchange',
     #'allauth.socialaccount.providers.tumblr',
     #'allauth.socialaccount.providers.twitch',
-    'allauth.socialaccount.providers.twitter',
+    #'allauth.socialaccount.providers.twitter',
     #'allauth.socialaccount.providers.vimeo',
     #'allauth.socialaccount.providers.vk',
     #'allauth.socialaccount.providers.weibo',
     #'allauth.socialaccount.providers.xing',
+    'DirectVote.main',
     
 )
 
@@ -107,8 +108,8 @@ TEMPLATES = [
                 'django.core.context_processors.request',
 
                 # `allauth` specific context processors
-                'allauth.account.context_processors.account',
-                'allauth.socialaccount.context_processors.socialaccount',
+                #'allauth.account.context_processors.account',
+                #'allauth.socialaccount.context_processors.socialaccount',
                 
             ],
             'loaders': [
@@ -197,7 +198,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+    #'allauth.account.auth_backends.AuthenticationBackend',
 
 )
 

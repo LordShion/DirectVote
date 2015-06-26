@@ -50,21 +50,20 @@
 	 * and open the template in the editor.
 	 */
 
-	//var jquery = require('jquery');
-	//var $ = jquery.jQuery;
+	var users = __webpack_require__(2);
 
-	$(document).ready(function(){
-	  console.log('ready');  
+	$(document).ready(function () {
 	    
-	    $(document).mouseover(function(){
-	        $('body').attr('style','background-color:black');
+	    $('#mn-fm-login input[type=submit]').on('click', function () {
+	        //console.log(event);
+	        users.login();
 	    });
-	    $(document).mouseleave(function(){
-	        $('body').attr('style','background-color:none');
-	    });
-	    
-	    
+
+
+
 	});
+
+
 
 
 
@@ -9286,6 +9285,48 @@
 
 	}));
 
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {/* 
+	 * To change this license header, choose License Headers in Project Properties.
+	 * To change this template file, choose Tools | Templates
+	 * and open the template in the editor.
+	 */
+
+	module.exports = {
+	  login :   function(){
+	      data = {  
+	                user    :   $('#mn-in-login-user').val(),
+	                pass    :   btoa($('#mn-in-login-pass').val())
+	            };
+	            
+	            console.log(data);
+	      $.ajaxSetup({beforeSend: function(xhr, settings){
+	            xhr.setRequestHeader('X-CSRFToken', $('input[name="csrfmiddlewaretoken"]').attr('value'));
+	        }});
+	                
+	      $.ajax({
+				type: 'POST',
+				url: '/login/submit',
+				data: JSON.stringify(data),
+				dataType:"json",
+				contentType: "application/json; charset=utf-8"
+			}).done(function(response){
+	          console.log(response);
+	          console.log('login successfull');
+	          window.location = '/';
+	      }).fail(function(error){
+	          console.log(error);
+	          
+	      });
+	      
+	  }
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }
 /******/ ]);

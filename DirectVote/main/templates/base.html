@@ -10,6 +10,7 @@
             {% block scripts %}{% endblock %}
     </head>       
     <body>
+        {% csrf_token %}
         {% block content %}{% endblock %}
     </body>
 </html>
