@@ -1,25 +1,29 @@
-{% extends "base.html" %}
 {% load i18n %}
+{% load static from staticfiles %}
 
+<div>
+    {% trans "login html file" %}
+            {% if  user.is_authenticated %}
+		{{ user.username }}
+                
+		<div>
+			<button class="bt_logout">
+				{% trans "Logout" %}
+			</button>
+		</div>
+            {% else %}
+		{% trans "Please login" %}
+		<form id="mn-fm-login" action="javascript:void(0)"> <!--action="/signin/" method="POST"-->
+                    <input id="mn-in-login-user" placeholder="{% trans 'user' %}"/>
+                    <input id="mn-in-login-pass" type="password" placeholder="{% trans 'password' %}"/>
+                    <input type="submit" value="{% trans 'Sign in' %}"/>
+                </form>
+            {% endif %}
+            
+	</div>
+<hr>
 
+    
+    
 
-{% block title %}
-    {% trans "DirectVote - Login" %}
-{% endblock %}
-
-{% block scripts %}
-    <script type="text/javascript">
-        
-    </script>
-{% endblock %}
-
-
-{% block content %}
-    {% trans "login" %}
-    <form id="mn-fm-login" action="javascript:void(0)"> <!--action="/signin/" method="POST"-->
-        <input id="mn-in-login-user" placeholder="{% trans 'user' %}"/>
-        <input id="mn-in-login-pass" type="password" placeholder="{% trans 'password' %}"/>
-        <input type="submit" value="{% trans 'Sign in' %}"/>
-    </form>
-{% endblock %}
 

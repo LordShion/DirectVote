@@ -4,10 +4,40 @@
 {% block title %}
     {% trans "DirectVote - Home" %}
 {% endblock %}
-{% block content %}
 
-    {% trans "Home"%}
+{% block header %}
+    <div id='header_page'>
+        <div id='login_header_space'>
+            {% include 'login.html' %}
+        </div>
+    </div>
+        
+    
+{% endblock %}
+
+{% block navigation %}
+<div id='navigation_page'>
+    {% include "navigation.html" %}
+</div>
+    
+{% endblock %}
+
+{% block main %}
+
+<div  id='main_page'>
+                {% include 'page_start.html' %}
+</div>
+
+
+	
    
     
 {% endblock %}
 
+{% block footer %}
+
+    <div id='footer_page'>
+        {% include "footer.html" %}
+    </div>
+
+{% endblock %}

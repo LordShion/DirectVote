@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load static from staticfiles %}
+
+    {% trans "Welcome"%}
+	<div>
+	{% if  user.is_authenticated %}
+		{% trans "you are logged in " %}
+                
+		
+	{% else %}
+		{% trans "you are not logged in" %}
+
+	{% endif %}
+	</div>
+    <hr>
+   
+
+
+

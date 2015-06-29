@@ -5,19 +5,7 @@
  */
 
 var users = require('./users.js');
-
-$(document).ready(function () {
-    
-    $('#mn-fm-login input[type=submit]').on('click', function () {
-        //console.log(event);
-        users.login();
+    users.init();
+    $(document).ready(function () {
+        users.jstart();
     });
-
-
-
-});
-
-
-
-
-

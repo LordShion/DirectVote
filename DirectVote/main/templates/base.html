@@ -11,7 +11,10 @@
     </head>       
     <body>
         {% csrf_token %}
-        {% block content %}{% endblock %}
+        {% block header %}{% endblock %}
+        {% block navigation %}{% endblock %}
+        {% block main %}{% endblock %}
+        {% block footer %}{% endblock %}
     </body>
 </html>
 

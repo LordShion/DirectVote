@@ -8,29 +8,34 @@ from django.shortcuts import redirect
 import json
 import base64
 
-from django.contrib.auth import authenticate , login
+from django.contrib.auth import authenticate , login, logout
 from django.contrib.auth.models import User
 #from django.contrib.auth.decorators import login_required
 
 @require_GET
 #@login_required
 def home(request):
-    print "home"
+    print("home")
+    logged = False
     if not request.user.is_authenticated():
-        print "redirecting"
-        return redirect('/login')
-    return render(request,'home.html',{'data':''})
+        print ("redirecting")
+        #return redirect('/login')
+        logged = False
+    else: 
+        print("true")
+        logged = True
+    return render(request,'home.html',{'logged':logged})
 
 @require_GET
 def loginUser(request):
-    print "login"
-    return render(request,'login.html',{'data':''})
+    print ("login")
+    return render(request,'login.html')
 
 @require_POST
 def loginSubmit(request):
-    print "login submit"
+    print("login submit")
     try: 
-        data = json.loads(request.body)
+        data = json.loads(request.body.decode('utf-8'))
     except Exception as s:
         return HttpResponse(json.dumps({'message':'error reading json'}), content_type='application/json',status=400)
     #print data
@@ -73,3 +78,17 @@ def loginSubmit(request):
     return HttpResponse(json.dumps(response_data), content_type="application/json", status=403)
 
 
+@require_POST
+def logoutUser(request):
+    logout(request)
+    response_data = {}
+    response_data['result'] = 'success'
+    response_data['message'] = 'you have been logged out'
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+@require_GET
+def viewPage(request, page):
+    print(page)
+    
+    return render(request, page )
+    
