@@ -9377,10 +9377,10 @@
 	                    
 	                    var msg = "page loaded: "+name;
 	                    console.log( msg + xhr.status + " " + xhr.statusText );
+	                    $(document).ready(function () {
+	                        self.jstart();
+	                    });
 	                }
-	              }).done(function(){
-	                  self.jstart();
-	                  
 	              });
 	      
 	      
