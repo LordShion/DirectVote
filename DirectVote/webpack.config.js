@@ -31,9 +31,10 @@ module.exports = {
       new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
       ),
-      new webpack.ProvidePlugin({
+     new webpack.ProvidePlugin({
                 $: "jquery",
-                jQuery: "jquery"
+                jQuery: "jquery",
+                'jquery-cookie': "jquery-cookie"
       }),
       new WebpackErrorNotificationPlugin(/* strategy */)
     ]

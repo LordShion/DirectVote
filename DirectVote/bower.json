@@ -23,6 +23,7 @@
     "gulp": "~3.9.0",
     "bootstrap-sass-official": "~3.3.4",
     "fontawesome": "~4.3.0",
-    "jshint": "~2.8.0"
+    "jshint": "~2.8.0",
+    "jquery-cookie": "~1.4.1"
   }
 }

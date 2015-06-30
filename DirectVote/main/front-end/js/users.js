@@ -48,6 +48,11 @@ module.exports = {
 			contentType: "application/json; charset=utf-8"
 		}).done(function(response){
                     console.log(response);
+                    console.log($.cookie('csrftoken'));
+                    var csrftoken = $.cookie('csrftoken');
+                    // set the token of the page with new token
+                    $('input[name=csrfmiddlewaretoken]').val(csrftoken);
+                    console.log(response);
                     console.log('login successfull');
                     console.log( $('#login_header_space') );
 
@@ -75,6 +80,13 @@ module.exports = {
 			dataType:"json",
 			contentType: "application/json; charset=utf-8"
 		}).done(function(response){
+                    console.log(response);
+                    console.log($.cookie('csrftoken'));
+                    var csrftoken = $.cookie('csrftoken');
+                    
+                    
+                    // set the token of the page with new token
+                    $('input[name=csrfmiddlewaretoken]').val(csrftoken);
           console.log(response);
           console.log('logout successfull');
           
