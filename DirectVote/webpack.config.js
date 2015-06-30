@@ -33,8 +33,8 @@ module.exports = {
       ),
      new webpack.ProvidePlugin({
                 $: "jquery",
-                jQuery: "jquery",
-                'jquery-cookie': "jquery-cookie"
+                jQuery: "jquery"
+                
       }),
       new WebpackErrorNotificationPlugin(/* strategy */)
     ]
