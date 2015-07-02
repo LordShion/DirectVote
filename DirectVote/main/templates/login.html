@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load static from staticfiles %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 <div class="row">
     
  
@@ -13,6 +15,16 @@
         <div class="col-md-8 ">
         <div class="container-fluid ">
             <div class="row text-right">
+                <form id="chglanguage" action="/i18n/setlang" method="get">
+                {% csrf_token %}
+                <select name="language">
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+                {% endfor %}
+                </select> 
+                    <input type="submit" class="btn btn-default btn-xs" value="submit">
+                
+                </form> 
                 
                     
                         {% if  user.is_authenticated %}

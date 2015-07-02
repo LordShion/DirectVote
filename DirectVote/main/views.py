@@ -88,7 +88,7 @@ def logoutUser(request):
 
 @require_GET
 def viewPage(request, page):
-    print(page)
+    print(page+".html")
     
-    return render(request, page )
+    return render(request, page+".html" )
     

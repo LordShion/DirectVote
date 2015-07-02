@@ -1,22 +1,22 @@
 {% load i18n %}
 {% load static from staticfiles %}
-<div class="container-fluid " >
-    <div class="row ">
-        <div class="col-md-12 ">
+
+   
             {% trans "Welcome"%}
-            <div>
+            
             {% if  user.is_authenticated %}
                     {% trans "you are logged in " %}
 
 
             {% else %}
                     {% trans "you are not logged in" %}
+                    
 
             {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
+            
+
+
+
 
 
 

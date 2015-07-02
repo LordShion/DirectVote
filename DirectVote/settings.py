@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -81,6 +83,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -88,6 +91,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    
 )
 
 ROOT_URLCONF = 'DirectVote.urls'
@@ -106,6 +110,7 @@ TEMPLATES = [
                 
                 # `allauth` needs this from django
                 'django.core.context_processors.request',
+                'django.core.context_processors.i18n',
 
                 # `allauth` specific context processors
                 #'allauth.account.context_processors.account',
@@ -138,8 +143,26 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, './locale'),
+
+)
+
+
+
+
+LANGUAGE_CODE = 'fr-fr' 'en-us' 
+
+LANGUAGES = (
+    ('fr-fr', 'Francais'),
+    ('en-us', 'English'),
+)
+#DEFAULT_LANGUAGE = 1
+
+#TIME_ZONE = 'Europe/Paris'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

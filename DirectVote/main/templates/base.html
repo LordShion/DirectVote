@@ -1,5 +1,9 @@
 {% load i18n %}
 {% load static from staticfiles %}
+
+{% get_current_language as LANGUAGE_CODE %}
+<!-- Current language: {{ LANGUAGE_CODE }} -->
+
 <html>
     <head>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -8,15 +12,30 @@
             
             <link rel="stylesheet" href="{% static "main/css/main.css" %}"/>
             
-            <script type="text/javascript" src="{% static "main/js/bundle.js" %}""></script>
+            <script type="text/javascript" src="{% static "main/js/bundle.js" %}"></script>
             {% block scripts %}{% endblock %}
     </head>       
     <body>
         {% csrf_token %}
-        {% block header %}{% endblock %}
-        {% block navigation %}{% endblock %}
-        {% block main %}{% endblock %}
-        {% block footer %}{% endblock %}
+        <div class="container-fluid">
+            <div class="row">
+                {% block header %}{% endblock %}
+            </div>
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                {% block navigation %}{% endblock %}
+                {% block main %}{% endblock %}
+            </div>
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                {% block footer %}{% endblock %}
+            </div>
+        </div>
+
     </body>
 </html>
 

@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-02 16:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DirectVote/main/templates/discussions.html:6
+#: DirectVote/main/templates/navigation.html:13
+msgid "Discussions"
+msgstr "Discussions"
+
+#: DirectVote/main/templates/footer.html:7
+msgid "Work in progress"
+msgstr "Dévelopement en cours"
+
+#: DirectVote/main/templates/footer.html:9
+msgid "@FMS"
+msgstr "@FMS"
+
+#: DirectVote/main/templates/home.html:5
+msgid "DirectVote - Home"
+msgstr "Acceuil"
+
+#: DirectVote/main/templates/login.html:10
+msgid "Direct Vote"
+msgstr "Votation Directe"
+
+#: DirectVote/main/templates/login.html:37
+msgid "My account"
+msgstr "Mon compte"
+
+#: DirectVote/main/templates/login.html:41
+msgid "Logout"
+msgstr "Deconnection"
+
+#: DirectVote/main/templates/login.html:50
+msgid "user"
+msgstr "identifiant"
+
+#: DirectVote/main/templates/login.html:51
+msgid "password"
+msgstr "mot de passe"
+
+#: DirectVote/main/templates/login.html:56
+msgid "Login"
+msgstr "Connection"
+
+#: DirectVote/main/templates/messagebox.html:6
+msgid "Message Box"
+msgstr "Boite de messages"
+
+#: DirectVote/main/templates/myaccount.html:9
+msgid "Details of user"
+msgstr "Details de l'utilisateur"
+
+#: DirectVote/main/templates/myaccount.html:13
+msgid "You are not allowed, to access this part."
+msgstr "Vous n etes pas connecté"
+
+#: DirectVote/main/templates/myaccount.html:15
+msgid "Please login."
+msgstr "Veuillez vous connecter"
+
+#: DirectVote/main/templates/navigation.html:7
+msgid "Home"
+msgstr "Acceuils"
+
+#: DirectVote/main/templates/navigation.html:9
+msgid "Opened Votes"
+msgstr "Votations en cours"
+
+#: DirectVote/main/templates/navigation.html:11
+msgid "Results"
+msgstr "Resultats"
+
+#: DirectVote/main/templates/navigation.html:12
+msgid "Proposals"
+msgstr "Propositions"
+
+#: DirectVote/main/templates/navigation.html:15
+#: DirectVote/main/templates/online_chat.html:6
+msgid "Online Chat"
+msgstr "Dialogue en ligne"
+
+#: DirectVote/main/templates/navigation.html:19
+msgid "Messages"
+msgstr "Mes Messages"
+
+#: DirectVote/main/templates/open_votes.html:6
+msgid "Opened Votations"
+msgstr "Votations ouvertes"
+
+#: DirectVote/main/templates/page_start.html:5
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: DirectVote/main/templates/page_start.html:8
+msgid "you are logged in "
+msgstr "Vous etes connecte."
+
+#: DirectVote/main/templates/page_start.html:12
+msgid "you are not logged in"
+msgstr "Vous n etes pas connecte."
+
+#: DirectVote/main/templates/proposals.html:6
+msgid "Votations Proposals"
+msgstr "Propositions de Votations"
+
+#: DirectVote/main/templates/results.html:6
+msgid "Votations Results"
+msgstr "Resultats des votations"

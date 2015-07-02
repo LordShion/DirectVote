@@ -12,6 +12,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^accounts/', include('allauth.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')), 
     url(r'', include('DirectVote.main.urls')),
     
     

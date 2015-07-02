@@ -9437,6 +9437,29 @@
 	            self.loadpage('#main_page', $(this).attr('data'));
 	            
 	        });
+	        
+	        /*$('#chglanguage').on('change',function(event){
+	           console.log('language change detexted'); 
+	           $.ajaxSetup({beforeSend: function(xhr, settings){
+	            xhr.setRequestHeader('X-CSRFToken', $('input[name="csrfmiddlewaretoken"]').attr('value'));
+	        }});
+	           $.ajax({
+				type: 'GET',
+				url: '/i18n/setlang',
+				language: 'fr-FR'
+			}).done(function(response){
+	                    console.log(response);
+	                    
+
+
+	                    
+	                    
+	          
+	          
+	                }).fail(function(error){
+	                    console.log('error changing language');
+	                });
+	        });*/
 
 	    },
 
@@ -9533,7 +9556,7 @@
 	      var defer = $.Deferred();
 	      
 	      
-	      $(obj).load( "view/"+name+".html", function( response, status, xhr ) {
+	      $(obj).load( "view/"+name, function( response, status, xhr ) {
 	                if ( status === "error" ) {
 	                  var msg = "Sorry but there was an error: " +name;
 	                  console.log( msg + xhr.status + " " + xhr.statusText );
