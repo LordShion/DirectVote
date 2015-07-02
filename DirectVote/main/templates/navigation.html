@@ -1,8 +1,17 @@
 {% load i18n %}
 {% load static from staticfiles %}
 
-{% trans "Navigation html file" %}
 
-<hr>
+
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="#">{% trans "Home" %}</a></li>
+            {% if  user.is_authenticated %}
+            <li role="presentation"><a href="#">{% trans "Profile" %}</a></li>
+            <li role="presentation"><a href="#">{% trans "Messages" %}</a></li>
+            {% endif %}
+        </ul>
+
+
+
 
 

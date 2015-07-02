@@ -6,37 +6,44 @@
 {% endblock %}
 
 {% block header %}
-    <div id='header_page'>
-        <div id='login_header_space'>
+    <div id='login_header_space' class="container-fluid">
+        
             {% include 'login.html' %}
-        </div>
+       
     </div>
         
     
 {% endblock %}
+<div id="main_content" class="container-fluid">
+    <div class="row">
 
-{% block navigation %}
-<div id='navigation_page'>
-    {% include "navigation.html" %}
+        {% block navigation %}
+        <div id='navigation_page' class="col-md-2">
+           
+                {% include "navigation.html" %}
+            
+        </div>
+
+        {% endblock %}
+
+        {% block main %}
+
+        <div  id='main_page' class="col-md-10">
+            
+                        {% include 'page_start.html' %}
+            
+        </div>
+
+
+
+
+
+        {% endblock %}
+    </div>  
 </div>
-    
-{% endblock %}
-
-{% block main %}
-
-<div  id='main_page'>
-                {% include 'page_start.html' %}
-</div>
-
-
-	
-   
-    
-{% endblock %}
-
 {% block footer %}
 
-    <div id='footer_page'>
+    <div id='footer_page' class="container-fluid col-md-12 ">
         {% include "footer.html" %}
     </div>
 

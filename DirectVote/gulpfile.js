@@ -13,7 +13,10 @@ var gulp = require('gulp'),
     jshint     = require('gulp-jshint'),
     concat = require('gulp-concat'),
     gutil = require('gulp-util'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    
+    webpack = require('gulp-webpack'),
+    webpackConfig = require('./webpack.config.js');
     
     
     var config = {
@@ -31,15 +34,21 @@ gulp.task('icons', function() { 
         .pipe(gulp.dest('./main/static/main/fonts')); 
 });
 
-gulp.task('build-js', function() {
-  return gulp.src('./main/front-end/js/**/*.js')
-    .pipe(sourcemaps.init())
-      .pipe(concat('bundle.js'))
-      //only uglify if gulp is ran with '--type production'
-      .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./main/static/main/js'));
+gulp.task('js', function (cb) {
+  return gulp.src('')
+  .pipe(webpack(webpackConfig))
+  .pipe(gulp.dest('./main/static/main/js'));
 });
+
+//gulp.task('build-js', function() {
+//  return gulp.src('./main/front-end/js/**/*.js')
+//    .pipe(sourcemaps.init())
+ //     .pipe(concat('bundle.js'))
+//      //only uglify if gulp is ran with '--type production'
+//////      .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
+ //   .pipe(sourcemaps.write())
+ //   .pipe(gulp.dest('./main/static/main/js'));
+//});
 
 
 gulp.task('css', function() {
@@ -60,6 +69,6 @@ gulp.task('css', function() {
      gulp.watch(config.sassPath + '/**/*.scss', ['css']); 
 });
 
-  gulp.task('default', ['bower', 'icons', 'css']);
+  gulp.task('default', ['bower', 'icons', 'css', 'js']);
   
   

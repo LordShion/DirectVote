@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load static from staticfiles %}
+
+<div class="row">
+
+            {% if  user.is_authenticated %}
+            <div>{{ user.username }}</div>
+            <div> 
+                {% trans "Details of user" %}
+            </div>
+            {% else %}
+            
+		{% trans "You are not allowed, to access this part." %}
+                </br>
+                {% trans "Please login." %}
+		
+            {% endif %}
+            
+	</div>
+<hr>
+
+    
+    
+
+

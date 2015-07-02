@@ -15,14 +15,22 @@ module.exports = {
         console.log('restart js');
            
     
-        $('#mn-fm-login input[type=submit]').on('click', function () {
-            console.log(event);
+        $('.bt_login').on('click', function (event) {
+            event.stopPropagation();
+            
             self.login();
         });
 
-            $('.bt_logout').on('click', function () {
-            console.log(event);
+            $('.bt_logout').on('click', function (event) {
+                event.stopPropagation();
+            
             self.logout();
+        });
+        
+        $('a.ln').on('click',function(event) {
+            event.stopPropagation();
+            self.loadpage('#main_page', $(this).attr('data'));
+            
         });
 
     },
@@ -57,8 +65,14 @@ module.exports = {
                     console.log( $('#login_header_space') );
 
 
-                    self.loadpage('#login_header_space',"view/login.html");
-                    self.loadpage('#main_page',"view/page_start.html");
+                    $.when(self.loadpage('#login_header_space',"login"),
+                        self.loadpage('#main_page',"page_start"),
+                        self.loadpage('#navigation_page','navigation')).done(function(){
+                            console.log('everything loaded');
+                            self.jstart();
+                        }).fail(function(){
+                            console.log('error while loading');
+                        });
                     
           
           
@@ -90,8 +104,18 @@ module.exports = {
           console.log(response);
           console.log('logout successfull');
           
-          self.loadpage('#login_header_space',"view/login.html");
-          self.loadpage('#main_page',"view/page_start.html");
+          $.when(self.loadpage('#login_header_space',"login"),
+            self.loadpage('#main_page',"page_start"),
+            self.loadpage('#navigation_page','navigation')).done(function(){
+                console.log('everything loaded');
+                self.jstart();
+            }).fail(function(){
+                console.log('error while loading');
+            });
+          
+         
+                        
+            
 
 
       }).fail(function(error){
@@ -101,22 +125,24 @@ module.exports = {
   
   };
   self.loadpage =  function(obj,name){
+      var defer = $.Deferred();
       
-      $(obj).load( name, function( response, status, xhr ) {
+      
+      $(obj).load( "view/"+name+".html", function( response, status, xhr ) {
                 if ( status === "error" ) {
                   var msg = "Sorry but there was an error: " +name;
                   console.log( msg + xhr.status + " " + xhr.statusText );
+                  defer.reject(response);
                 }else{
                     
                     var msg = "page loaded: "+name;
                     console.log( msg + xhr.status + " " + xhr.statusText );
-                    $(document).ready(function () {
-                        self.jstart();
-                    });
+                    defer.resolve(response);
+                    
                 }
               });
       
-      
+     return defer.promise();; 
   };
         
 })
