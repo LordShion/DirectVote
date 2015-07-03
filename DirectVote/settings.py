@@ -156,11 +156,11 @@ LOCALE_PATHS = (
 
 
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fr'
 
 LANGUAGES = (
     ('fr', 'Francais'),
-    ('en', 'English'),
+    #('en', 'English'),
 )
 DEFAULT_LANGUAGE = 1
 

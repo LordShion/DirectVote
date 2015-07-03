@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-03 12:12+0200\n"
+"POT-Creation-Date: 2015-07-03 15:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,11 @@ msgstr ""
 #: DirectVote/main/templates/navigation.html:13
 msgid "Discussions"
 msgstr "Discussions"
+
+#: DirectVote/main/templates/faq.html:6
+#: DirectVote/main/templates/navigation.html:21
+msgid "Frequently asked questions"
+msgstr "Foire aux questions"
 
 #: DirectVote/main/templates/footer.html:7
 msgid "Work in progress"
@@ -38,23 +43,23 @@ msgstr "Acceuil"
 msgid "Direct Vote"
 msgstr "Votation Directe"
 
-#: DirectVote/main/templates/login.html:38
+#: DirectVote/main/templates/login.html:42
 msgid "My account"
 msgstr "Mon compte"
 
-#: DirectVote/main/templates/login.html:42
+#: DirectVote/main/templates/login.html:47
 msgid "Logout"
 msgstr "Déconnection"
 
-#: DirectVote/main/templates/login.html:51
+#: DirectVote/main/templates/login.html:56
 msgid "user"
 msgstr "identifiant"
 
-#: DirectVote/main/templates/login.html:52
+#: DirectVote/main/templates/login.html:57
 msgid "password"
 msgstr "mot de passe"
 
-#: DirectVote/main/templates/login.html:57
+#: DirectVote/main/templates/login.html:62
 msgid "Login"
 msgstr "Connection"
 
