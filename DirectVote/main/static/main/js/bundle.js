@@ -9438,18 +9438,27 @@
 	            
 	        });
 	        
-	        /*$('#chglanguage').on('change',function(event){
+	        $('select[name=language]').on('change',function(event){
 	           console.log('language change detexted'); 
 	           $.ajaxSetup({beforeSend: function(xhr, settings){
 	            xhr.setRequestHeader('X-CSRFToken', $('input[name="csrfmiddlewaretoken"]').attr('value'));
 	        }});
 	           $.ajax({
-				type: 'GET',
-				url: '/i18n/setlang',
-				language: 'fr-FR'
+				type: 'POST',
+				url: '/i18n/setlang/',
+				data: {language: $('select[name=language]').val()}
 			}).done(function(response){
 	                    console.log(response);
+	                    //window.location = '/';
 	                    
+	                    $.when(self.loadpage('#login_header_space',"login"),
+	                        self.loadpage('#main_page',"page_start"),
+	                        self.loadpage('#navigation_page','navigation')).done(function(){
+	                            console.log('everything loaded');
+	                            self.jstart();
+	                        }).fail(function(){
+	                            console.log('error while loading');
+	                        });
 
 
 	                    
@@ -9459,7 +9468,7 @@
 	                }).fail(function(error){
 	                    console.log('error changing language');
 	                });
-	        });*/
+	        });
 
 	    },
 

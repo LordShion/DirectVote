@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 16:12+0000\n"
+"POT-Creation-Date: 2015-07-03 12:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,23 +38,23 @@ msgstr "DirectVote - Home"
 msgid "Direct Vote"
 msgstr "Direct Vote"
 
-#: DirectVote/main/templates/login.html:37
+#: DirectVote/main/templates/login.html:38
 msgid "My account"
 msgstr "My account"
 
-#: DirectVote/main/templates/login.html:41
+#: DirectVote/main/templates/login.html:42
 msgid "Logout"
 msgstr "Logout"
 
-#: DirectVote/main/templates/login.html:50
+#: DirectVote/main/templates/login.html:51
 msgid "user"
 msgstr "user"
 
-#: DirectVote/main/templates/login.html:51
+#: DirectVote/main/templates/login.html:52
 msgid "password"
 msgstr "password"
 
-#: DirectVote/main/templates/login.html:56
+#: DirectVote/main/templates/login.html:57
 msgid "Login"
 msgstr "Login"
 

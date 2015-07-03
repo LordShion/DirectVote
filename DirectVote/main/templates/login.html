@@ -15,16 +15,17 @@
         <div class="col-md-8 ">
         <div class="container-fluid ">
             <div class="row text-right">
-                <form id="chglanguage" action="/i18n/setlang" method="get">
-                {% csrf_token %}
-                <select name="language">
-                {% for lang in LANGUAGES %}
-                    <option value="{{ lang.0 }}">{{ lang.1 }}</option>
-                {% endfor %}
-                </select> 
-                    <input type="submit" class="btn btn-default btn-xs" value="submit">
-                
-                </form> 
+                <form >
+
+   <input name="next" type="hidden" value="{{ redirect_to }}" />
+   <select name="language">
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% for language in languages %}
+       <option {% if language.code = LANGUAGE_CODE %} selected {% endif %}value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+      {% endfor %}
+ </select>
+ <!--input type="submit" value="Go" /-->
+</form>
                 
                     
                         {% if  user.is_authenticated %}

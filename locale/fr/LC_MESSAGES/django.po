@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 16:12+0000\n"
+"POT-Creation-Date: 2015-07-03 12:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,23 +38,23 @@ msgstr "Acceuil"
 msgid "Direct Vote"
 msgstr "Votation Directe"
 
-#: DirectVote/main/templates/login.html:37
+#: DirectVote/main/templates/login.html:38
 msgid "My account"
 msgstr "Mon compte"
 
-#: DirectVote/main/templates/login.html:41
+#: DirectVote/main/templates/login.html:42
 msgid "Logout"
-msgstr "Deconnection"
+msgstr "Déconnection"
 
-#: DirectVote/main/templates/login.html:50
+#: DirectVote/main/templates/login.html:51
 msgid "user"
 msgstr "identifiant"
 
-#: DirectVote/main/templates/login.html:51
+#: DirectVote/main/templates/login.html:52
 msgid "password"
 msgstr "mot de passe"
 
-#: DirectVote/main/templates/login.html:56
+#: DirectVote/main/templates/login.html:57
 msgid "Login"
 msgstr "Connection"
 
@@ -64,11 +64,11 @@ msgstr "Boite de messages"
 
 #: DirectVote/main/templates/myaccount.html:9
 msgid "Details of user"
-msgstr "Details de l'utilisateur"
+msgstr "Détails de l'utilisateur"
 
 #: DirectVote/main/templates/myaccount.html:13
 msgid "You are not allowed, to access this part."
-msgstr "Vous n etes pas connecté"
+msgstr "Vous n'êtes pas connecté"
 
 #: DirectVote/main/templates/myaccount.html:15
 msgid "Please login."
@@ -76,7 +76,7 @@ msgstr "Veuillez vous connecter"
 
 #: DirectVote/main/templates/navigation.html:7
 msgid "Home"
-msgstr "Acceuils"
+msgstr "Acceuil"
 
 #: DirectVote/main/templates/navigation.html:9
 msgid "Opened Votes"
@@ -84,7 +84,7 @@ msgstr "Votations en cours"
 
 #: DirectVote/main/templates/navigation.html:11
 msgid "Results"
-msgstr "Resultats"
+msgstr "Résultats"
 
 #: DirectVote/main/templates/navigation.html:12
 msgid "Proposals"
@@ -109,11 +109,11 @@ msgstr "Bienvenue"
 
 #: DirectVote/main/templates/page_start.html:8
 msgid "you are logged in "
-msgstr "Vous etes connecte."
+msgstr "Vous êtes connecte."
 
 #: DirectVote/main/templates/page_start.html:12
 msgid "you are not logged in"
-msgstr "Vous n etes pas connecte."
+msgstr "Vous n'êtes pas connecte."
 
 #: DirectVote/main/templates/proposals.html:6
 msgid "Votations Proposals"
@@ -121,4 +121,4 @@ msgstr "Propositions de Votations"
 
 #: DirectVote/main/templates/results.html:6
 msgid "Votations Results"
-msgstr "Resultats des votations"
+msgstr "Résultats des votations"

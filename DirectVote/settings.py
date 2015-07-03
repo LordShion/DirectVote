@@ -106,11 +106,13 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.i18n',
+                #'multilingual.context_processors.multilingual',
                 'django.contrib.messages.context_processors.messages',
                 
                 # `allauth` needs this from django
                 'django.core.context_processors.request',
-                'django.core.context_processors.i18n',
+                
 
                 # `allauth` specific context processors
                 #'allauth.account.context_processors.account',
@@ -154,16 +156,16 @@ LOCALE_PATHS = (
 
 
 
-LANGUAGE_CODE = 'fr-fr' 'en-us' 
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
-    ('fr-fr', 'Francais'),
-    ('en-us', 'English'),
+    ('fr', 'Francais'),
+    ('en', 'English'),
 )
-#DEFAULT_LANGUAGE = 1
+DEFAULT_LANGUAGE = 1
 
-#TIME_ZONE = 'Europe/Paris'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
+#TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
