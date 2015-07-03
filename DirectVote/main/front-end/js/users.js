@@ -28,8 +28,16 @@ module.exports = {
         });
         
         $('a.ln').on('click',function(event) {
-            event.stopPropagation();
+            //event.stopPropagation();
+            $('.nav li').removeClass("active");
             self.loadpage('#main_page', $(this).attr('data'));
+            
+        });
+        
+        $('.nav li').on('click',function(event) {
+            
+            $(this).addClass("active");
+            
             
         });
         
