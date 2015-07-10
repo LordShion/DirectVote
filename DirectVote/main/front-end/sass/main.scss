@@ -32,3 +32,15 @@ body{
 .blue{
     background-color: blue;
 }
+
+.mycollapse{
+    height: 0;
+    overflow:hidden;
+    transition: height .5s;
+    
+}
+.myexpand{
+    
+    height: 100;
+}
+

@@ -30,19 +30,27 @@
                       <label for="exampleInputEmail1">{% trans "email" %}</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{% trans "email" %}" value = "{{ user.email }}">
                     </div>
-                    <div class="form-group  form-group-sm">
-                      <label for="exampleInputPassword1">{% trans "actual password" %}</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{% trans "actual password" %}">
+                    <hr>
+                    <div class="btn btn-sm btn-default clickcollapse">{%trans "change password" %} <div class="glyphicon glyphicon-chevron-right"></div></div>
+                    <div class="mycollapse">
+                        
+                        <div class="expandsize">
+                            <br>
+                            <div class="form-group  form-group-sm">
+                              <label for="exampleInputPassword1">{% trans "actual password" %}</label>
+                              <input type="password" class="form-control"  placeholder="{% trans "actual password" %}">
+                            </div>
+                            <div class="form-group  form-group-sm">
+                              <label for="exampleInputEmail1">{% trans "new password" %}</label>
+                              <input type="password" class="form-control" id="exampleInputEmail1" placeholder="{% trans "new password" %}">
+                            </div>
+                            <div class="form-group  form-group-sm">
+                              <label for="exampleInputEmail1">{% trans "retype new password" %}</label>
+                              <input type="password" class="form-control" id="exampleInputEmail1" placeholder="{% trans "retype new password" %}">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group  form-group-sm">
-                      <label for="exampleInputEmail1">{% trans "new password" %}</label>
-                      <input type="password" class="form-control" id="exampleInputEmail1" placeholder="{% trans "new password" %}">
-                    </div>
-                    <div class="form-group  form-group-sm">
-                      <label for="exampleInputEmail1">{% trans "retype new password" %}</label>
-                      <input type="password" class="form-control" id="exampleInputEmail1" placeholder="{% trans "retype new password" %}">
-                    </div>
-                    
+                    <hr>
                     <div class="form-group  form-group-sm">
                       <label for="exampleInputEmail1">{% trans "Voting card ID" %}</label>
                       <input type="number" class="form-control" id="exampleInputEmail1" placeholder="{% trans "Voting card ID" %}">
@@ -71,6 +79,8 @@
 		
 		
             {% endif %}
+            
+            
  
 
 

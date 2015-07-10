@@ -33,6 +33,10 @@ gulp.task('icons', function() { 
     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
         .pipe(gulp.dest('./main/static/main/fonts')); 
 });
+gulp.task('glyphicons', function() { 
+    return gulp.src(config.bowerDir + '/bootstrap/fonts/**.*') 
+        .pipe(gulp.dest('./main/static/main/fonts/bootstrap')); 
+});
 
 gulp.task('js', function (cb) {
   return gulp.src('')
@@ -69,6 +73,6 @@ gulp.task('css', function() {
      gulp.watch(config.sassPath + '/**/*.scss', ['css']); 
 });
 
-  gulp.task('default', ['bower', 'icons', 'css', 'js']);
+  gulp.task('default', ['bower', 'icons','glyphicons', 'css', 'js']);
   
   

@@ -50,14 +50,30 @@
 	 * and open the template in the editor.
 	 */
 	__webpack_require__(2);
+	__webpack_require__(3);
+	__webpack_require__(5);
 
-	var users = __webpack_require__(3);
 
-	   
+	// uncomment or comment this this for  console logging;
+	console.log = function(){    return; };
+
+
+	var users = __webpack_require__(6);
+
+
+	 
 	    users.init();
 	    $(document).ready(function () {
 	        users.jstart();
+	        $(document).on('load',function(){
+	            console.log('document changed');
+	            commons.collapsables();
+	        });
+	        
+	        
 	    });
+	    
+
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
@@ -9280,6 +9296,57 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(1);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["commons"] = __webpack_require__(4);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {/* 
+	 * To change this license header, choose License Headers in Project Properties.
+	 * To change this template file, choose Tools | Templates
+	 * and open the template in the editor.
+	 */
+
+	module.exports = {
+	        collapsables: function (){
+
+	                $('.clickcollapse').on('click',function(event){
+	                    console.log('collapsing/expanding');
+
+	                                if ($(this).next('.mycollapse').height()>0) {
+	                                    $(this).next('.mycollapse').height(0);
+	                                    $(this).children('.glyphicon').removeClass('glyphicon-chevron-down');
+	                                    $(this).children('.glyphicon').addClass('glyphicon-chevron-right');
+	                                } else {
+	                                    $(this).next('.mycollapse').height($(this).next('.mycollapse').children('.expandsize').height());
+	                                    $(this).children('.glyphicon').removeClass('glyphicon-chevron-right');
+	                                    $(this).children('.glyphicon').addClass('glyphicon-chevron-down');
+	                                };
+
+
+	                            });
+
+
+
+
+	    }
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	 * jQuery Cookie Plugin v1.4.1
 	 * https://github.com/carhartl/jquery-cookie
@@ -9400,7 +9467,7 @@
 
 
 /***/ },
-/* 3 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {/* 
@@ -9433,9 +9500,16 @@
 	        });
 	        
 	        $('a.ln').on('click',function(event) {
-	            //event.stopPropagation();
+	            event.stopPropagation();
+
 	            $('.nav li').removeClass("active");
-	            self.loadpage('#main_page', $(this).attr('data'));
+	            self.loadpage('#main_page', $(this).attr('data')).done(function(response){
+	                commons.collapsables();
+
+	            }).fail(function(error){
+	                console.log(error);
+	            });
+	            
 	            
 	        });
 	        
@@ -9445,6 +9519,9 @@
 	            
 	            
 	        });
+	        
+	        
+	        
 	        
 	        $('select[name=language]').on('change',function(event){
 	           console.log('language change detexted'); 
@@ -9456,8 +9533,8 @@
 				url: '/i18n/setlang/',
 				data: {language: $('select[name=language]').val()}
 			}).done(function(response){
-	                    console.log(response);
-	                    //window.location = '/';
+
+
 	                    
 	                    $.when(self.loadpage('#login_header_space',"login"),
 	                        self.loadpage('#main_page',"page_start"),

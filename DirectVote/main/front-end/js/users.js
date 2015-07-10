@@ -28,9 +28,16 @@ module.exports = {
         });
         
         $('a.ln').on('click',function(event) {
-            //event.stopPropagation();
+            event.stopPropagation();
+
             $('.nav li').removeClass("active");
-            self.loadpage('#main_page', $(this).attr('data'));
+            self.loadpage('#main_page', $(this).attr('data')).done(function(response){
+                commons.collapsables();
+
+            }).fail(function(error){
+                console.log(error);
+            });
+            
             
         });
         
@@ -40,6 +47,9 @@ module.exports = {
             
             
         });
+        
+        
+        
         
         $('select[name=language]').on('change',function(event){
            console.log('language change detexted'); 
@@ -51,8 +61,8 @@ module.exports = {
 			url: '/i18n/setlang/',
 			data: {language: $('select[name=language]').val()}
 		}).done(function(response){
-                    console.log(response);
-                    //window.location = '/';
+
+
                     
                     $.when(self.loadpage('#login_header_space',"login"),
                         self.loadpage('#main_page',"page_start"),

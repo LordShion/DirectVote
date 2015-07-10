@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-03 15:34+0200\n"
+"POT-Creation-Date: 2015-07-10 15:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,15 +67,63 @@ msgstr "Connection"
 msgid "Message Box"
 msgstr "Boite de messages"
 
-#: DirectVote/main/templates/myaccount.html:9
-msgid "Details of user"
-msgstr "Détails de l'utilisateur"
+#: DirectVote/main/templates/myaccount.html:10
+msgid "User account"
+msgstr "Compte Utilisateur"
 
-#: DirectVote/main/templates/myaccount.html:13
+#: DirectVote/main/templates/myaccount.html:18
+#: DirectVote/main/templates/myaccount.html:19
+msgid "username"
+msgstr "identifiant"
+
+#: DirectVote/main/templates/myaccount.html:22
+#: DirectVote/main/templates/myaccount.html:23
+msgid "name"
+msgstr "nom"
+
+#: DirectVote/main/templates/myaccount.html:26
+#: DirectVote/main/templates/myaccount.html:27
+msgid "First name"
+msgstr "prénom"
+
+#: DirectVote/main/templates/myaccount.html:30
+#: DirectVote/main/templates/myaccount.html:31
+msgid "email"
+msgstr "email"
+
+#: DirectVote/main/templates/myaccount.html:34
+msgid "change password"
+msgstr "changer le mot de passe"
+
+#: DirectVote/main/templates/myaccount.html:40
+#: DirectVote/main/templates/myaccount.html:41
+msgid "actual password"
+msgstr "mot de passe actuel"
+
+#: DirectVote/main/templates/myaccount.html:44
+#: DirectVote/main/templates/myaccount.html:45
+msgid "new password"
+msgstr "nouveau mot de passe"
+
+#: DirectVote/main/templates/myaccount.html:48
+#: DirectVote/main/templates/myaccount.html:49
+msgid "retype new password"
+msgstr "retapez le nouveau mot de passe"
+
+#: DirectVote/main/templates/myaccount.html:55
+#: DirectVote/main/templates/myaccount.html:56
+msgid "Voting card ID"
+msgstr "N° de carte d'électeur"
+
+#: DirectVote/main/templates/myaccount.html:62
+msgid "Submit"
+msgstr "Soumettre"
+
+#: DirectVote/main/templates/myaccount.html:73
 msgid "You are not allowed, to access this part."
 msgstr "Vous n'êtes pas connecté"
 
-#: DirectVote/main/templates/myaccount.html:15
+#: DirectVote/main/templates/myaccount.html:75
 msgid "Please login."
 msgstr "Veuillez vous connecter"
 
@@ -127,3 +175,6 @@ msgstr "Propositions de Votations"
 #: DirectVote/main/templates/results.html:6
 msgid "Votations Results"
 msgstr "Résultats des votations"
+
+#~ msgid "Details of user"
+#~ msgstr "Détails de l'utilisateur"
