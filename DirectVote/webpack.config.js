@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -19,10 +19,9 @@ module.exports = {
         filename: "bundle.js"
     },
     resolve: {
-      root:[
-        path.join(__dirname, "bower_components")
-      ],
-      extensions: ['', '.js','.json']
+
+      extensions: ['', '.js','.json'],
+      modulesDirectories: ['node_modules', 'bower_components']
     },
     plugins: [
       /*new ExtractTextPlugin("./status/apps/main/static/main/dist/css/all.css", {
@@ -34,7 +33,7 @@ module.exports = {
      new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery"
-                
+
       }),
       new WebpackErrorNotificationPlugin(/* strategy */)
     ]
