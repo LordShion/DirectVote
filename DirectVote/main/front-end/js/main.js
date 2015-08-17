@@ -12,12 +12,15 @@ require('../../../bower_components/bootstrap');
 // uncomment or comment this this for  console logging;
 console.log = function(){    return; };
 
+      var messages_handler = require('./messages_handler.js');
 
 var users = require('./users.js');
 
 
-
+    messages_handler.init();
     users.init();
+
+
     $(document).ready(function () {
         users.jstart();
         $(document).on('load',function(){

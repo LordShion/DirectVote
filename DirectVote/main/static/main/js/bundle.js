@@ -58,12 +58,15 @@
 	// uncomment or comment this this for  console logging;
 	console.log = function(){    return; };
 
+	      var messages_handler = __webpack_require__(19);
 
-	var users = __webpack_require__(19);
+	var users = __webpack_require__(20);
 
 
-
+	    messages_handler.init();
 	    users.init();
+
+
 	    $(document).ready(function () {
 	        users.jstart();
 	        $(document).on('load',function(){
@@ -11905,6 +11908,25 @@
 
 /***/ },
 /* 19 */
+/***/ function(module, exports) {
+
+	module.exports = {
+
+	    self: this,
+	    init: (function(){
+	            console.log('init messages handler');
+	            var self = this;
+
+	            self.system = function(message){
+	                console.log('system message called');
+	                console.log('passed message = ' + message);
+	                };
+
+	        })
+	    }
+
+/***/ },
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {/*
@@ -11912,6 +11934,7 @@
 	 * To change this template file, choose Tools | Templates
 	 * and open the template in the editor.
 	 */
+
 
 	module.exports = {
 	    self: this,
@@ -12032,6 +12055,8 @@
 	                        }).fail(function(){
 	                            console.log('error while loading');
 	                            $('#system_messages').modal('show');
+	                            console.log(messages_handler);
+	                            messages_handler.system('toto');
 	                        });
 
 
@@ -12039,6 +12064,8 @@
 	                }).fail(function(error){
 	                    console.log('error submitting login');
 	                    $('#system_messages').modal('show');
+	                    console.log(messages_handler);
+	                    messages_handler .system('toto');
 	                });
 
 	  };

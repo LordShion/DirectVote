@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 module.exports = {
     self: this,
 
@@ -123,6 +124,8 @@ module.exports = {
                         }).fail(function(){
                             console.log('error while loading');
                             $('#system_messages').modal('show');
+                            console.log(messages_handler);
+                            messages_handler.system('toto');
                         });
 
 
@@ -130,6 +133,8 @@ module.exports = {
                 }).fail(function(error){
                     console.log('error submitting login');
                     $('#system_messages').modal('show');
+                    console.log(messages_handler);
+                    messages_handler .system('toto');
                 });
 
   };
