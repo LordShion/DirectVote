@@ -1,15 +1,10 @@
 #-*- coding:utf-8 -*-
-from django.conf.urls import *
-
-urlpatterns = patterns('',
-    
-    url(r'^login/submit', 'DirectVote.main.views.loginSubmit', name='main.loginSubmit'),
-    url(r'^login', 'DirectVote.main.views.loginUser', name='main.loginUser'),
-    url(r'^logout', 'DirectVote.main.views.logoutUser', name='main.logoutUser'),
-    url(r'^view/(?P<page>[\w,\s-]+$)$', 'DirectVote.main.views.viewPage', name='main.viewPage'),
-    
-    url(r'', 'DirectVote.main.views.home', name='main.home'),
-    
-
-)
-
+from django.conf.urls import url
+from . import views
+urlpatterns = [
+    url(r'^login/submit', views.loginSubmit, name='main.loginSubmit'),
+    url(r'^login', views.loginUser, name='main.loginUser'),
+    url(r'^logout', views.logoutUser, name='main.logoutUser'),
+    url(r'^view/(?P<page>[\w,\s-]+$)$', views.viewPage, name='main.viewPage'),
+    url(r'', views.home, name='main.home'),
+]

@@ -107,17 +107,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.core.context_processors.i18n',
+
                 #'multilingual.context_processors.multilingual',
                 'django.contrib.messages.context_processors.messages',
-                
                 # `allauth` needs this from django
-                'django.core.context_processors.request',
-                
-
+                #'django.core.context_processors.request',
                 # `allauth` specific context processors
                 #'allauth.account.context_processors.account',
                 #'allauth.socialaccount.context_processors.socialaccount',
-                
             ],
             'loaders': [
                 # insert your TEMPLATE_LOADERS here

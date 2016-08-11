@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import ValidUser
+from DirectVote.main.models import ValidUser
 
 class ValidUserAdmin(admin.ModelAdmin):
     list_display = ('user', 'idcard')
