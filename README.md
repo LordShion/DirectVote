@@ -12,6 +12,9 @@ activate virtualenv
 pip install django==1.8
 
 
+create a local_settings.py file  in the same folder as settings.py
+with your database settings
+for production prefer a postgresql database service 
 
 in order to make modifications to javascript code and css code and compile after modification
 
@@ -32,7 +35,9 @@ sudo su -c "gem install sass"
 to compile everything 
 type
 
-gulp
+gulp       (this operation creates all needed static files if you modify them)
+
+
 
 
 
