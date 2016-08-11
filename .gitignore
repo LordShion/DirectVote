@@ -1,2 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+*.pyc
+.pyc
+
 /nbproject/
 /db.sqlite3
+
+
+/DirectVote/node_modules/
+/DirectVote/bower_components/
+.sass-cache

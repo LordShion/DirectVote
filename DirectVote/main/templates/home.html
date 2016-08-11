@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "DirectVote - Home" %}
+{% endblock %}
+
+{% block header %}
+
+        <div id='login_header_space' class="container-fluid">
+
+                {% include 'login.html' %}
+
+        </div>
+
+{% endblock %}
+
+
+                {% block navigation %}
+                <div id='navigation_page' class="col-md-2">
+
+                        {% include "navigation.html" %}
+
+                </div>
+
+                {% endblock %}
+
+                {% block main %}
+
+                <div  id='main_page' class="col-md-10">
+
+                                {% include 'page_start.html' %}
+
+                </div>
+
+
+
+
+
+                {% endblock %}
+
+
+
+{% block footer %}
+
+        <div id='footer_page' class="container-fluid ">
+
+            {% include "footer.html" %}
+        </div>
+
+{% endblock %}
+

@@ -1,0 +1,80 @@
+{% load i18n %}
+{% load static from staticfiles %}
+
+
+{% csrf_token %}
+<div class="row">
+    
+ 
+        <div class='col-md-4'>
+        {% trans "Direct Vote" %}
+        </div>
+        <!--div class='col-md-4'>
+&nbsp;
+        </div-->
+        <div class="col-md-8 ">
+        <div class="container-fluid ">
+            <div class="row text-right">
+                <!--form >
+
+   <input name="next" type="hidden" value="{{ redirect_to }}" />
+   <select name="language">
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% for language in languages %}
+       <option {% if language.code = LANGUAGE_CODE %} selected {% endif %}value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+      {% endfor %}
+ </select>
+ <!--input type="submit" value="Go" /-->
+</form-->
+
+                    
+
+                
+                    
+                        {% if  user.is_authenticated %}
+
+                        <ul class="list-inline">
+                            <li>
+                                {{ user.username }}
+                            </li>
+                            <li> 
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li role="presentation"><a href="javascript:void(0)" class="ln link-short" data="myaccount" >{% trans "My account" %}</a> </li>
+                                </ul>
+                            </li>
+                            <li>
+                                   <button class="btn btn-default btn-xs  bt_logout">
+                                           {% trans "Logout" %}
+                                   </button>
+                            </li>
+                        </ul>
+                        {% else %}
+
+                    <form id="mn-fm-login" action="javascript:void(0)">
+                        <ul class="list-inline">
+
+                            <li><input id="mn-in-login-user" class="input" placeholder="{% trans 'user' %}"/>
+                            <li><input id="mn-in-login-pass" class="input" type="password" placeholder="{% trans 'password' %}"/>
+
+                            <!--/div-->
+
+                            <li><button class="btn btn-default btn-xs bt_login">
+                                    {% trans "Login" %}
+                                </button>
+                            </li>
+                        </ul>
+                        
+                    </form>
+                            
+                        {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+
+</div>
+
+    
+    
+
+

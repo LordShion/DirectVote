@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 15, 2015, 5:19:25 PM
+    Author     : filipesilva
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+$font-family-base: 'Raleway', sans-serif;
+// Import bootstrap and fontawesome
+@import "bootstrap";
+@import "font-awesome";
+//.....
+
+body{
+    //background-color: grey;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+
+.mycollapse{
+    height: 0;
+    overflow:hidden;
+    transition: height .5s;
+    
+}
+.myexpand{
+    
+    height: 100;
+}
+
