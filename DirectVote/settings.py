@@ -226,4 +226,8 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-
+try:
+    from local_settings import *
+except ImportError:
+    pass
+    
