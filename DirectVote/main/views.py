@@ -12,6 +12,8 @@ from django.contrib.auth import authenticate , login, logout
 from django.contrib.auth.models import User
 #from django.contrib.auth.decorators import login_required
 
+from models import Proposal
+
 @require_GET
 #@login_required
 def home(request):
@@ -91,4 +93,15 @@ def viewPage(request, page):
     print(page+".html")
     
     return render(request, page+".html" )
+
+
+@require_GET
+def proposals_page(request):
+    
+    proposals = Proposal.objects.all()
+
+    context = {'proposals': proposals}
+
+
+    return render(request, "proposals.html", context)
     

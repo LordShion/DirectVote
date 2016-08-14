@@ -28,23 +28,17 @@ module.exports = {
             self.logout();
         });
 
-        $('a.ln').on('click',function(event) {
-            event.stopPropagation();
 
-            $('.nav li').removeClass("active");
+        $('.nav li a.ln').on('click',function(event) {
+
             self.loadpage('#main_page', $(this).attr('data')).done(function(response){
                 commons.collapsables();
+                commons.links('#main_page');
 
             }).fail(function(error){
                 console.log(error);
             });
-
-
-        });
-
-        $('.nav li').on('click',function(event) {
-
-            $(this).addClass("active");
+            
 
 
         });

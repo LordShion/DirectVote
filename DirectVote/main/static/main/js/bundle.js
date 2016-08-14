@@ -56,7 +56,7 @@
 
 
 	// uncomment or comment this this for  console logging;
-	console.log = function(){    return; };
+	// console.log = function(){    return; };
 
 	      var messages_handler = __webpack_require__(19);
 
@@ -69,9 +69,11 @@
 
 	    $(document).ready(function () {
 	        users.jstart();
+	        commons.links('#startpage');
 	        $(document).on('load',function(){
 	            console.log('document changed');
 	            commons.collapsables();
+
 	        });
 
 
@@ -9342,6 +9344,18 @@
 
 
 
+	    },
+	    links: function(id){
+	        $(id+' .nav li a.ln').on('click',function(event) {
+	            console.log($(this))
+	            $($(this).parents('ul')).children().removeClass("active");
+	            $(this).parent('li').addClass("active");
+
+	            
+	            
+
+
+	        });
 	    }
 	};
 
@@ -11973,23 +11987,17 @@
 	            self.logout();
 	        });
 
-	        $('a.ln').on('click',function(event) {
-	            event.stopPropagation();
 
-	            $('.nav li').removeClass("active");
+	        $('.nav li a.ln').on('click',function(event) {
+
 	            self.loadpage('#main_page', $(this).attr('data')).done(function(response){
 	                commons.collapsables();
+	                commons.links('#main_page');
 
 	            }).fail(function(error){
 	                console.log(error);
 	            });
-
-
-	        });
-
-	        $('.nav li').on('click',function(event) {
-
-	            $(this).addClass("active");
+	            
 
 
 	        });

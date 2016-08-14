@@ -10,7 +10,7 @@ require('../../../bower_components/bootstrap');
 
 
 // uncomment or comment this this for  console logging;
-console.log = function(){    return; };
+// console.log = function(){    return; };
 
       var messages_handler = require('./messages_handler.js');
 
@@ -23,9 +23,11 @@ var users = require('./users.js');
 
     $(document).ready(function () {
         users.jstart();
+        commons.links('#startpage');
         $(document).on('load',function(){
             console.log('document changed');
             commons.collapsables();
+
         });
 
 

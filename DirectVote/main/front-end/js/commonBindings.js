@@ -26,5 +26,17 @@ module.exports = {
 
 
 
+    },
+    links: function(id){
+        $(id+' .nav li a.ln').on('click',function(event) {
+            console.log($(this))
+            $($(this).parents('ul')).children().removeClass("active");
+            $(this).parent('li').addClass("active");
+
+            
+            
+
+
+        });
     }
 };

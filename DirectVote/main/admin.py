@@ -8,6 +8,7 @@ admin.site.register(ValidUser, ValidUserAdmin)
 
 class VotationAdmin(admin.ModelAdmin):
     list_display = (
+    					'name',
                         'proposal',
                         'nb_pro_votes',
                         'nb_con_votes',
@@ -32,13 +33,15 @@ admin.site.register(Votation, VotationAdmin)
 class ProposalAdmin(admin.ModelAdmin):
     #inlines = (UsersInline,)
     list_display = (
+    					'name',
                         'text',
-                        #'authors',
+                        'get_authors',
                         'created',
                         'created_by',
                         'modified',
                         'modified_by',
                         )
     pass
+    
 admin.site.register(Proposal, ProposalAdmin)
 

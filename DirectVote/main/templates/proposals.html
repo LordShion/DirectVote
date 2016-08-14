@@ -4,8 +4,13 @@
 
 
         {% trans "Votations Proposals" %}
-
-
+        <hr>
+        
+        <ul class="nav nav-pills nav-stacked">
+	        {% for proposal in proposals %}
+	        <li role="presentation"><a class="ln">{{ proposal.name }} {{ proposal.text }}</a></li>
+	        {% endfor %}
+        </ul>
 
 
 
