@@ -78,6 +78,9 @@ INSTALLED_APPS = (
     #'allauth.socialaccount.providers.weibo',
     #'allauth.socialaccount.providers.xing',
     'DirectVote.main',
+    'djangobb_forum',
+    #'DirectVote.forum',
+    'allauth.account',
     
 )
 
@@ -179,7 +182,11 @@ USE_TZ = True
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = '/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -193,6 +200,7 @@ STATICFILES_DIRS = (
     os.path.join(
         os.path.dirname(__file__),
         'main/static',
+
     ),
     
 )
