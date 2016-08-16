@@ -234,6 +234,18 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
+# djangobb_forum settings
+# Haystack settings
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'djangobb_index'),
+        'INCLUDE_SPELLING': True,
+    },
+}
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+
 try:
     from local_settings import *
 except ImportError:

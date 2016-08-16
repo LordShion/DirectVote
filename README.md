@@ -9,7 +9,18 @@ create a python 2.7 virtualenv outside project folder
 
 activate virtualenv
 
-pip install django==1.8
+cd project
+
+pip install -r requirements 
+
+DirectVote needs djangobb_forum for the forum part.
+Manual installation is needed actually
+
+wget https://bitbucket.org/slav0nic/djangobb/get/stable.tar.gz
+tar zxvf stable.tar.gz
+
+with your virtualenv activated
+./setup.py install
 
 
 create a local_settings.py file  in the same folder as settings.py
