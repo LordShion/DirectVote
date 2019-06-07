@@ -6,11 +6,38 @@
         {% trans "Votations Proposals" %}
         <hr>
         
-        <ul class="nav nav-pills nav-stacked">
+        <ul class="nav nav-pills nav-stacked accordion" id="accordionExample">
 	        {% for proposal in proposals %}
-	        <li role="presentation"><a class="ln">{{ proposal.name }} {{ proposal.text }}</a></li>
+	        <li role="presentation" data-toggle="collapse" data-target="#collapse{{ proposal.id }}">
+                <a class="ln">{{ proposal.id }} {{ proposal.name }} {{ proposal.created }} </a>
+                <br>
+
+
+            </li>
+                    <div id="collapse{{ proposal.id }}" class="card collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            {% trans "Proposal Resume" %}
+                            <br>
+                            {{ proposal.text }}
+                            <ul class="nav nav-pills">
+                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="view_full_proposal">{% trans "View full proposal" %}</a></li>
+                            {% if  user.is_authenticated %}
+                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="remove">{% trans "Remove" %}</a></li>
+                            {% endif %}
+                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
+                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="discussions">{% trans "Discussions" %}</a></li>
+                            {% if  user.is_authenticated %}
+                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="submit_to_votation">{% trans "Submit to Votation" %}</a></li>
+                            {% endif %}
+                            </ul>
+
+                        </div>
+                    </div>
+
+
 	        {% endfor %}
         </ul>
+
 
 
 

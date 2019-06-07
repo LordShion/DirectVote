@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^login', views.loginUser, name='main.loginUser'),
     url(r'^logout', views.logoutUser, name='main.logoutUser'),
     url(r'^view/proposals', views.proposals_page, name='main.proposals_page'),
+    url(r'^view/open_votes', views.votations_page, name='main.votations_page'),
     url(r'^view/(?P<page>[\w,\s-]+$)$', views.viewPage, name='main.viewPage'),
     url(r'', views.home, name='main.home'),
 ]

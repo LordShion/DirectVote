@@ -6,10 +6,10 @@
         <ul id="navlist" class="nav nav-pills nav-stacked">
             <li role="presentation" class="active"><a href="javascript:void(0)" class="ln" data="page_start">{% trans "Home" %}</a></li>
             {% if  user.is_authenticated %}
-            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="open_votes">{% trans "Opened Votes" %}</a></li>
+            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="votations">{% trans "Opened Votes" %}</a></li>
             {% endif %}
-            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
             <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="proposals">{% trans "Proposals" %}</a></li>
+            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
             <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="discussions">{% trans "Discussions" %}</a></li>
             {% if  user.is_authenticated %}
             <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="online_chat">{% trans "Online Chat" %}</a></li>

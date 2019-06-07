@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load static from staticfiles %}
+
+
+
+        {% trans "Opened Votations" %}
+
+        <hr>
+
+        <ul class="nav nav-pills nav-stacked">
+	        {% for votation in Votations %}
+	        <li role="presentation"><a class="ln">{{ votation.name }} {{ votation.text }}</a></li>
+	        {% endfor %}
+        </ul>
+
+
+
+
+

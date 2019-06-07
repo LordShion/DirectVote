@@ -12,7 +12,7 @@ from django.contrib.auth import authenticate , login, logout
 from django.contrib.auth.models import User
 #from django.contrib.auth.decorators import login_required
 
-from models import Proposal
+from models import Proposal, Votation
 
 @require_GET
 #@login_required
@@ -102,4 +102,13 @@ def proposals_page(request):
     context = {'proposals': proposals}
     
     return render(request, "proposals.html", context)
+
+
+@require_GET
+def votations_page(request):
+    Votations = Votation.objects.all()
+
+    context = {'Votations': Votations}
+
+    return render(request, "votations.html", context)
     
