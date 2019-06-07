@@ -94,14 +94,12 @@ def viewPage(request, page):
     
     return render(request, page+".html" )
 
-
 @require_GET
 def proposals_page(request):
     
     proposals = Proposal.objects.all()
 
     context = {'proposals': proposals}
-
-
+    
     return render(request, "proposals.html", context)
     
