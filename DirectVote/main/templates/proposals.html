@@ -20,15 +20,15 @@
                             <br>
                             {{ proposal.text }}
                             <ul class="nav nav-pills">
-                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="view_full_proposal">{% trans "View full proposal" %}</a></li>
-                            {% if  user.is_authenticated %}
-                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="remove">{% trans "Remove" %}</a></li>
-                            {% endif %}
-                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
-                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="discussions">{% trans "Discussions" %}</a></li>
-                            {% if  user.is_authenticated %}
-                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="submit_to_votation">{% trans "Submit to Votation" %}</a></li>
-                            {% endif %}
+                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="view_full_proposal">{% trans "View full proposal" %}</a></li>
+                                {% if  user.is_authenticated %}
+                                    <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="remove">{% trans "Remove" %}</a></li>
+                                {% endif %}
+                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
+                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="discussions">{% trans "Discussions" %}</a></li>
+                                {% if  user.is_authenticated %}
+                                    <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="submit_to_votation">{% trans "Submit to Votation" %}</a></li>
+                                {% endif %}
                             </ul>
 
                         </div>
@@ -36,6 +36,13 @@
 
 
 	        {% endfor %}
+        <hr>
+        <ul class="nav nav-pills">
+            {% if  user.is_authenticated %}
+                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="create_proposal">{% trans "Create a proposal" %}</a></li>
+            {% endif %}
+            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="find_proposal">{% trans "Find a proposal" %}</a></li>
+        </ul>
         </ul>
 
 

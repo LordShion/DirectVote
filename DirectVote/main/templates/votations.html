@@ -14,29 +14,50 @@
 
 
             </li>
-                    <div id="vote_collapse{{ votation.id }}" class="card collapse" aria-labelledby="headingOne" data-parent="#vote_accordion">
-                        <div class="card-body">
-                            {% trans "Votation Resume" %}
-                            <br>
-                            {{ votation.text }}
-                            <ul class="nav nav-pills">
-                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="view_full_proposal">{% trans "View full proposal" %}</a></li>
-                            {% if  user.is_authenticated %}
-                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="remove">{% trans "Remove" %}</a></li>
-                            {% endif %}
-                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
-                            <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="discussions">{% trans "Discussions" %}</a></li>
-                            {% if  user.is_authenticated %}
-                                <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="Vote">{% trans "Vote" %}</a></li>
-                            {% endif %}
-                            </ul>
+            <div id="vote_collapse{{ votation.id }}" class="card collapse" aria-labelledby="headingOne" data-parent="#vote_accordion">
+                <div class="card-body">
+                    {% trans "Votation Resume" %}
+                    <br>
+                    {{ votation.text }}
+                    <ul class="nav nav-pills">
+                    <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="view_full_proposal">{% trans "View full proposal" %}</a></li>
+                    {% if  user.is_authenticated %}
+                        <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="remove">{% trans "Remove" %}</a></li>
+                    {% endif %}
+                    <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="results">{% trans "Results" %}</a></li>
+                    <li role="presentation" class=""><a href="javascript:void(0)" class="ln" data="discussions">{% trans "Discussions" %}</a></li>
+                    {% if  user.is_authenticated %}
+                        <li role="presentation" data-toggle="modal" data-target="#votation{{ votation.id }}modal_vote" class=""><a href="javascript:void(0)" class="ln" data="Vote">{% trans "Vote" %}</a></li>
+                    {% endif %}
+                    </ul>
 
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <!-- votation modal -->
+            <div class="modal fade" id="votation{{ votation.id }}modal_vote" tabindex="-1" role="dialog" aria-labelledby="votation{{ votation.id }}modal_vote_label" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="votation{{ votation.id }}modal_vote_label">{% trans "Voting" %}</h5>
+                  </div>
+                  <div class="modal-body">
+                      {{ votation.proposal.text }}
+                    <hr>
+                      <button type="button" class="btn btn-primary">{% trans "I VOTE YES"%}</button>
+                      <button type="button" class="btn btn-primary">{% trans "I VOTE NO"%}</button>
+                      <button type="button" class="btn btn-primary">{% trans "I VOTE BLANK"%}</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 	        {% endfor %}
         </ul>
+
 
 
 
