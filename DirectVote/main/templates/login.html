@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load static from staticfiles %}
+{% load static %}
 
 
 {% csrf_token %}
@@ -21,7 +21,7 @@
    <select name="language">
       {% get_language_info_list for LANGUAGES as languages %}
       {% for language in languages %}
-       <option {% if language.code = LANGUAGE_CODE %} selected {% endif %}value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+       <option {% if language.code == LANGUAGE_CODE %} selected {% endif %}value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
       {% endfor %}
  </select>
  <!--input type="submit" value="Go" /-->

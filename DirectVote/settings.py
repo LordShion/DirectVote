@@ -78,20 +78,22 @@ INSTALLED_APPS = (
     #'allauth.socialaccount.providers.weibo',
     #'allauth.socialaccount.providers.xing',
     'DirectVote.main',
-    'djangobb_forum',
+    #'djangobb_forum',
     #'DirectVote.forum',
     'allauth.account',
     
 )
-
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
+]
+MIDDLEWARE_CLASSES = (
+
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     
@@ -109,7 +111,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.core.context_processors.i18n',
+                #'django.core.context_processors.i18n',
 
                 #'multilingual.context_processors.multilingual',
                 'django.contrib.messages.context_processors.messages',

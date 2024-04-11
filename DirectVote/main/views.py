@@ -12,14 +12,14 @@ from django.contrib.auth import authenticate , login, logout
 from django.contrib.auth.models import User
 #from django.contrib.auth.decorators import login_required
 
-from models import Proposal
+from .models import Proposal
 
 @require_GET
 #@login_required
 def home(request):
     print("home")
     logged = False
-    if not request.user.is_authenticated():
+    if not request.user.is_authenticated:
         print ("redirecting")
         #return redirect('/login')
         logged = False
@@ -104,4 +104,3 @@ def proposals_page(request):
 
 
     return render(request, "proposals.html", context)
-    

@@ -5,7 +5,7 @@ from django.utils import timezone
 
 # Create your models here.
 class ValidUser(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     idcard = models.BigIntegerField(primary_key=True)
 
     class Meta:
@@ -35,7 +35,7 @@ class Proposal(models.Model):
 # Votations
 class Votation(models.Model):
     name = models.CharField(default='Proposal Title', max_length=512)
-    proposal = models.OneToOneField(Proposal)
+    proposal = models.OneToOneField(Proposal, on_delete=models.CASCADE)
     nb_pro_votes = models.IntegerField(default=0)
     nb_con_votes = models.IntegerField(default=0)
     nb_blank_votes = models.IntegerField(default=0)
